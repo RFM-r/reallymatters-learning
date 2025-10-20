@@ -1,7 +1,17 @@
 # Конспект занятий
 
-```
-> Со студентами составить навигацию по этому репозиторию средствами Markwodn!
+## Навигация по проекту
+
+- [Todo](/Todo.md)
+- [Markdown](/Markdown.md)
+- [Bash](/content/Bash/)
+- [Docker](/content/Docker.md)
+- [Основы проектирования баз данных](/content/Basics_database_design/README.md)
+- [Обеспечение качества функционирования компьютерных систем](/content/Ensuring_quality_computer_systems_functioning/README.md)
+- [Поддержка и тестирование программных модулей](/content/SupportAndtesting_of_software_modules/README.md)
+
+```markdown
+> Со студентами составить навигацию по этому репозиторию средствами Markdown!
 ```
 
 Минимальные требования к студентам
@@ -63,6 +73,8 @@
 1. Запустить Docker Desktop (можно добавить в автозагрузку для удобства);
 1. В Powershell выполнить ```docker images``` для показа установленных образов;
 1. Установить тестовый контейнер ```docker run hello-world```
+
+[Подробные уроки по Docker для ничинающих](https://gitflic.ru/project/rurewa/altlinux/blob?file=content%2FDocker%2FDocker.md&branch=master&mode=markdown)
 
 ### Virtual Box (Для организации контроллера домена)
 
@@ -297,6 +309,10 @@ file enyFile.txt
 stat file1.txt
 ```
 
+Показать все ранее введённые команды:
+```shell
+history
+```
 
 #### Работа с git-ветками
 
