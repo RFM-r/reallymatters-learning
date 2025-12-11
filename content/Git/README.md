@@ -259,6 +259,12 @@ git checkout 94120de
 ```
 
 Вернуться на последний коммит
+
+```shell
+git switch -
+```
+
+или
 ```shell
 git checkout master
 ```
@@ -298,7 +304,7 @@ git branch test
 
 Переключиться на другую ветку
 ```shell
-git switch master
+git switch test
 ```
 
 или
@@ -312,26 +318,26 @@ git checkout test
 git checkout -b test
 ```
 
-Отправить новую ветку на сервер
+Отправить новую ветку на удалённый сервер
 ```shell
 git push --set-upstream origin test
 ```
 
 где `test` -  имя отправляемой ветки
 
-Удалить удалённую ветку
-```shell
-git push origin --delete test
-```
-
 Удалить локальную ветку
 ```shell
 git branch -d test
 ```
 
+Удалить удалённую ветку
+```shell
+git push origin --delete test
+```
+
 ### Слияние веток
 
-Ветку **anybranch** слить с **master**
+Например, ветку **anybranch** слить с **master**
 
 Переходим в ветку master
 ```shell
