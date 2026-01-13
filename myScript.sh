@@ -1,21 +1,16 @@
 #!/bin/bash
-#myScript
-echo "togetherandforever"
-
-echo "Hello, everyone!"
-echo "Today: $(date)"
-echo "Current user: $(user)"
-echo "We're in the directory: $(pwd)"
-echo "Today: $(cal)"
-
-echo "Summary: 2+2 = $((2+2))"
-
+# myScript.sh
+echo "Это мой первый скрипт"
+echo "Содержимое текущей директории: $(ls)" 
+echo "Текущая директория: $(pwd)"
+echo "Текущее время: $(date)"
+echo "Сумма 2 + 2 = $((2+2))"
 for i in 1 2 3 4 5; do
-    echo "$i time(s)"
-    sleep 0.8
+    echo "$i раз(a)"
+    sleep 0.5
 done
 
 while true; do
-    echo "Stop me if you can!"
-    sleep 0.25
+    echo "Останови меня!"
+    sleep 0.1
 done
