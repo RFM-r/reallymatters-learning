@@ -264,7 +264,58 @@ netstat -an
 route
 ```
 
+Nginx - это лёгкий и небольшой веб-сервер
+
+Readme со скриншотами, а в них выполненные результаты командной строки
 
 
+docker version
+
+docker search nginx
+			 (name of the container)
+			           |
+docker run -d --name my-nginx -p 80:80 nginx
+
+Проверка containers:
+docker ps -a
+
+Проверка image:
+docker images
+
+docker stop $(docker ps -q)
+
+docker container prune
+
+docker image prune -a
+
+docker stop ..(name of the container)
+
+Удаление контейнера:
+docker rm ..(name of the container)
+
+Показать работающий nginx:
+curl ..(link)
+
+docker logs -f nginxed-gg
+
+docker restart nginxed-gg
+docker stop nginxed-gg
+docker start nginxed-gg
 
 
+docker exec -it my-nginx bash
+uname -a
+
+apt update && apt install fastfetch
+
+(..и после: fastfetch)
+
+apt install htop
+htop (чтобы выйти, нажать Q)
+
+чтобы выйти из контейнера: exitc
+
+apt install -y hollywood
+
+apt install -y ascii
+ascii
