@@ -276,13 +276,13 @@ docker search nginx
 			           |
 docker run -d --name my-nginx -p 80:80 nginx
 
-Проверка containers:
-docker ps -a
+	Проверка containers:
+	docker ps -a
 
 Проверка image:
 docker images
 
-docker stop $(docker ps -q)
+	docker stop $(docker ps -q)
 
 docker container prune
 
@@ -319,3 +319,8 @@ apt install -y hollywood
 
 apt install -y ascii
 ascii
+
+micro /usr/share/nginx/html/index.html
+	^
+	|
+редактинг файла, находящегося в http://localhost/
