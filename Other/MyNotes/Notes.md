@@ -287,6 +287,8 @@ docker images
 docker container prune
 
 docker image prune -a
+docker rmi $(docker images -q) - (удаление всех образов)
+docker rmi nginx:latest - (удаление только одного образа)
 
 docker stop ..(name of the container)
 
@@ -302,7 +304,7 @@ docker restart nginxed-gg
 docker stop nginxed-gg
 docker start nginxed-gg
 
-
+				(custom name)
 docker exec -it my-nginx bash
 uname -a
 
@@ -319,6 +321,10 @@ apt install -y hollywood
 
 apt install -y ascii
 ascii
+fastfetch
+cmatrix
+
+cat /etc/os-release
 
 micro /usr/share/nginx/html/index.html
 	^
