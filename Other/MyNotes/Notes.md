@@ -305,14 +305,17 @@ docker stop nginxed-gg
 docker start nginxed-gg
 
 				(custom name)
-docker exec -it my-nginx bash
+docker exec -it my-nginx bash -- (запустить контейнер)
 uname -a
 
 apt update && apt install fastfetch
 
 (..и после: fastfetch)
 
+apt update && apt install -y fastfetch htop cmatrix hollywood mc micro -- (установить несколько приложений)
+
 apt install htop
+
 htop (чтобы выйти, нажать Q)
 
 чтобы выйти из контейнера: exitc
@@ -321,7 +324,9 @@ apt install -y hollywood
 
 apt install -y ascii
 ascii
+
 fastfetch
+
 cmatrix
 
 cat /etc/os-release
