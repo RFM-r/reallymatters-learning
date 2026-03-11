@@ -6,3 +6,6 @@
 ## 2. Создание аккаунта и вход:
 ### ![Portainer Acc Creation](../Portainer/imagesP/portaineracccreate.png)
 ### ![Portainer Look-Around](../Portainer/imagesP/portainergetstarted.png)
+
+## 3. Возможности внутри Home:
+### ![Portainer Home Interactions](../Portainer/imagesP/portainerhomestuff.png)

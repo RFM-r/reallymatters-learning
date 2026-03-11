@@ -4,3 +4,5 @@
 # [Самостоятельная работа по Docker-y: Speedtest](../dockers-Stuff/Speedtest/STREADME.md)
 # [Самостоятельная работа по Docker-y: cAdvisor](../dockers-Stuff/cAdvisor/cAdREADME.md)
 # [Самостоятельная работа по Docker-y: MySQL](../dockers-Stuff/MySQL/mSQLREADME.md)
+# [Самостоятельная работа по Docker-y: PostgreSQL](../dockers-Stuff/PostgreSQL/pgSQLREADME.md)
+# [Самостоятельная работа по Docker-y: MongoDB](../dockers-Stuff/MongoDB/mDBREADME.md)
