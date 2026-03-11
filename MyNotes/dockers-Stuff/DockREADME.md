@@ -1,1 +1,6 @@
-# [Самостоятельная работа по Docker-y](../dockers-Stuff/welcometoDocker/DockerWtD.md)
+# [Самостоятельная работа по Docker-y: Apache](../dockers-Stuff/Apache/ApacheREADME.md)
+# [Самостоятельная работа по Docker-y: WelcometoDocker](../dockers-Stuff/welcometoDocker/DockerWtD.md)
+# [Самостоятельная работа по Docker-y: Portainer](../dockers-Stuff/Portainer/PortainerREADME.md)
+# [Самостоятельная работа по Docker-y: Speedtest](../dockers-Stuff/Speedtest/STREADME.md)
+# [Самостоятельная работа по Docker-y: cAdvisor](../dockers-Stuff/cAdvisor/cAdREADME.md)
+# [Самостоятельная работа по Docker-y: MySQL](../dockers-Stuff/MySQL/mSQLREADME.md)
