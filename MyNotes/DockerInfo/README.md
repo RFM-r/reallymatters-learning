@@ -111,3 +111,45 @@ EXPOSE 5000
 
 # Команда запуска
 CMD ["flask", "run", "--host=0.0.0.0"]
+```
+
+## 6. Docker Compose
+Docker Compose — это инструмент для определения и запуска многоконтейнерных приложений Docker.
+# Зачем нужен?
+Если приложение состоит из нескольких сервисов (например: Веб-сервер + База данных + Кэш), запускать их отдельными командами docker run неудобно. Compose позволяет описать всю инфраструктуру в одном файле docker-compose.yml и управлять ею одной командой.
+# Основные возможности
+* Описание сервисов, сетей и томов (volumes).
+* Запуск и остановка всего стека одной командой.
+* Изоляция среды разработки от продакшена.
+
+# Пример docker-compose.yml:
+```shell
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - DATABASE_URL=postgresql://user:pass@db:5432/mydb
+    depends_on:
+      - db
+
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: mydb
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
+```
+# Команды управления:
+* docker compose up — Запустить сервисы.
+* docker compose down — Остановить и удалить ресурсы.
+* docker compose ps — Показать статус контейнеров.
+* docker compose logs — Просмотр логов.
