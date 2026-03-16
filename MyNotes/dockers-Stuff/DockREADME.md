@@ -6,3 +6,6 @@
 # [Самостоятельная работа по Docker-y: MySQL](../dockers-Stuff/MySQL/mSQLREADME.md)
 # [Самостоятельная работа по Docker-y: PostgreSQL](../dockers-Stuff/PostgreSQL/pgSQLREADME.md)
 # [Самостоятельная работа по Docker-y: MongoDB](../dockers-Stuff/MongoDB/mDBREADME.md)
+# [Самостоятельная работа по Docker-y: Adminer](../dockers-Stuff/Adminer/AdminerREADME.md)
+# [Самостоятельная работа по Docker-y: Jira](../dockers-Stuff/Jira/JREADME.md)
+# [Самостоятельная работа по Docker-y: Pcb2gcode](../dockers-Stuff/Pcb2gcode/Pcb_README.md)
