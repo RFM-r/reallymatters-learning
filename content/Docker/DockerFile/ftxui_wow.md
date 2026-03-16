@@ -116,3 +116,7 @@ docker run -it --rm ftxui-wow
 ```shell
 docker run -it --entrypoint bash ftxui-wow
 ```
+выйти из контейнера:
+```shell
+exit
+```

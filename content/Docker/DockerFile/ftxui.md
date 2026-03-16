@@ -114,3 +114,7 @@ docker run -it --rm ftxui-demo
 ```shell
 docker run -it --entrypoint bash ftxui-demo
 ```
+выйти из контейнера:
+```shell
+exit
+```
