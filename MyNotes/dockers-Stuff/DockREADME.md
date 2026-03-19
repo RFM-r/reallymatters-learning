@@ -15,3 +15,6 @@
 ## [Самостоятельная работа по Docker-y: Alt Linux in Docker](../dockers-Stuff/AltLinux/altL_README.md)
 ## [Самостоятельная работа по Docker-y: Python for launching scripts](../dockers-Stuff/Python/Python_README.md)
 ## [Самостоятельная работа по Docker-y: NodeJS](../dockers-Stuff/NodeJs/NodeJS_README.md)
+## [Самостоятельная работа по Docker-y: Redis](../dockers-Stuff/Redis/Red_README.md)
+## [Самостоятельная работа по Docker-y: HTTP Server](../dockers-Stuff/HTTP-server/HTTP-s_README.md)
+## [Самостоятельная работа по Docker-y: File Server](../dockers-Stuff/File-server/File-s_README.md)

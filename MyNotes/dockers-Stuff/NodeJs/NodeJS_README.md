@@ -5,5 +5,3 @@
 
 ## 2. Запуск скрипта:
 ![launchofthenode.js Script](../NodeJs/images_NJs/NJs_launchofNJs_script.png)
-
-#### unfinished... for now
