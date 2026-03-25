@@ -33,37 +33,37 @@ function Pause-Exit {
 }
 
 # 1. Проверка путей
-Write-Log "Проверка путей..."
+Write-Log "Paths check..."
 if (-not (Test-Path -Path $SourceDir -PathType Container)) {
-    Write-Log "Исходная папка не найдена: $SourceDir" "ERROR"
+    Write-Log "initial folder is not found: $SourceDir" "ERROR"
     Pause-Exit 1
 }
 if (-not (Test-Path -Path "$SourceDir\.git" -PathType Container)) {
-    Write-Log "Исходная папка не является Git репозиторием" "ERROR"
+    Write-Log "initial folder doesn't count as Git-repository" "ERROR"
     Pause-Exit 1
 }
 if (-not (Test-Path -Path $DestDir -PathType Container)) {
-    Write-Log "Целевая папка не найдена: $DestDir" "ERROR"
+    Write-Log "the target folder was not found: $DestDir" "ERROR"
     Pause-Exit 1
 }
 if (-not (Test-Path -Path "$DestDir\.git" -PathType Container)) {
-    Write-Log "Целевая папка не является Git репозиторием" "ERROR"
+    Write-Log "the target folder doesn't count as Git-repository" "ERROR"
     Pause-Exit 1
 }
 
 # 2. Обновление исходного репозитория
-Write-Log "Выполнение git pull в источнике: $SourceDir"
+Write-Log "Performing git pull in the SourceDirectory: $SourceDir"
 try {
     & git -C $SourceDir pull
     if ($LASTEXITCODE -ne 0) {
-        Write-Log "git pull в источнике завершился с кодом $LASTEXITCODE" "WARN"
+        Write-Log "git pull in the SourceDirectory ended with code: $LASTEXITCODE" "WARN"
     }
 } catch {
-    Write-Log "Ошибка выполнения git: $_" "ERROR"
+    Write-Log "Execution error git: $_" "ERROR"
 }
 
 # 3. Синхронизация файлов (исключая .git)
-Write-Log "Копирование файлов (исключая .git)..."
+Write-Log "File copy (excluding .git)..."
 # Используем Robocopy, так как он встроен в Windows и надежнее Copy-Item
 # /E - копировать подпапки, /XD .git - исключить папку .git, /PURGE - удалить в назначении лишнее (как rsync --delete)
 # Если не хотите удалять лишние файлы в назначении, уберите ключ /PURGE
@@ -72,40 +72,40 @@ $robocopyArgs = @($SourceDir, $DestDir, "/E", "/XD", ".git", ".gitignore", "/NFL
 $robocopyOutput = & robocopy $robocopyArgs
 # Robocopy возвращает коды 0-7 как успех, 8+ как ошибка
 if ($LASTEXITCODE -ge 8) {
-    Write-Log "Ошибка при копировании файлов (Robocopy). Код: $LASTEXITCODE" "ERROR"
+    Write-Log "Error with copying files: (Robocopy). Код: $LASTEXITCODE" "ERROR"
     Pause-Exit 1
 } else {
-    Write-Log "Копирование файлов завершено успешно." "SUCCESS"
+    Write-Log "File copying completed successfully." "SUCCESS"
 }
 
 # 4. Обновление целевого репозитория (Опционально)
 if ($DoPush) {
-    Write-Log "Обновление целевого репозитория: $DestDir"
+    Write-Log "Updating DestinationDirectory: $DestDir"
     Set-Location $DestDir
 
     # Проверка статуса
     $status = & git status --porcelain
     if ($status) {
-        Write-Log "Обнаружены изменения. Выполняем commit..."
+        Write-Log "Changes noticed. Executing commit..."
         & git add .
         & git commit -m $CommitMessage
         if ($LASTEXITCODE -eq 0) {
-            Write-Log "Выполнение git push..."
+            Write-Log "Executing git push..."
             & git push
             if ($LASTEXITCODE -ne 0) {
-                Write-Log "Ошибка git push. Проверьте доступ." "ERROR"
+                Write-Log "git push error. Check access." "ERROR"
             } else {
-                Write-Log "Успешно запушено!" "SUCCESS"
+                Write-Log "Running successfully!" "SUCCESS"
             }
         } else {
-            Write-Log "Ошибка коммита или нет изменений для коммита." "WARN"
+            Write-Log "Commit error or no changes for commit." "WARN"
         }
     } else {
-        Write-Log "Изменений нет, коммит не требуется." "INFO"
+        Write-Log "No changes, commit unneeded." "INFO"
     }
 } else {
-    Write-Log "DoPush = false. Пропускаем commit/push." "INFO"
+    Write-Log "DoPush = false. Skipping commit/push." "INFO"
 }
 
-Write-Log "Синхронизация завершена." "SUCCESS"
+Write-Log "Synchronization is complete." "SUCCESS"
 Pause-Exit 0
