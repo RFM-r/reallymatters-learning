@@ -16,10 +16,10 @@ Sync_run.bat
 ```
 #### - "Sync_run.bat" - Тоже "лаунчер", запускающий скрипт синхронизации.
 #### - "Sync_Repositories.ps1" - Скрипт, работающий на PowerShell.
-### Синхронизирует при помощи PowerShell. Запускать нужно Sync_run.bat(он служит таким некоторым "лаунчером")
+### Синхронизирует при помощи PowerShell. Запускать нужно Sync_run.bat.
 
 ### Результат выполнения скрипта "Sync_run_bash.sh". Bash:
 ![Result](../GitAutoSynchronization/images_GitAS/GitAS_bash_sync.png)
 
 ### Результат выполнения скрипта "Sync_run.bat". PowerShell:
-![Result2]()
+![Result2](../GitAutoSynchronization/images_GitAS/GitAS_powershell_sync.png)
