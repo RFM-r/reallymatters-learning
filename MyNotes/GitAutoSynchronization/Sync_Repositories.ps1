@@ -1,8 +1,7 @@
-# Принудительная установка кодировки UTF-8 для консоли
-[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
-[Console]::InputEncoding = [System.Text.Encoding]::UTF8
-$OutputEncoding = [System.Text.Encoding]::UTF8
-# ==============================================================================
+# Установка родной для русской Windows кодировки консоли
+[Console]::OutputEncoding = [System.Text.Encoding]::GetEncoding(866)
+chcp 866 | Out-Null
+
 # КОНФИГУРАЦИЯ
 # ==============================================================================
 # Укажите абсолютные пути к репозиториям
