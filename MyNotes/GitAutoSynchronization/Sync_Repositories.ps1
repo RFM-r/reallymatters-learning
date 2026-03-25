@@ -1,3 +1,6 @@
+# Принудительная установка кодировки UTF-8 для консоли
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+[Console]::InputEncoding = [System.Text.Encoding]::UTF8
 # ==============================================================================
 # КОНФИГУРАЦИЯ
 # ==============================================================================
@@ -64,7 +67,7 @@ Write-Log "Копирование файлов (исключая .git)..."
 # Используем Robocopy, так как он встроен в Windows и надежнее Copy-Item
 # /E - копировать подпапки, /XD .git - исключить папку .git, /PURGE - удалить в назначении лишнее (как rsync --delete)
 # Если не хотите удалять лишние файлы в назначении, уберите ключ /PURGE
-$robocopyArgs = @($SourceDir, $DestDir, "/E", "/XD", ".git", ".gitignore", "/PURGE", "/NFL", "/NDL", "/NJH", "/NJS")
+$robocopyArgs = @($SourceDir, $DestDir, "/E", "/XD", ".git", ".gitignore", "/NFL", "/NDL", "/NJH", "/NJS")
 
 $robocopyOutput = & robocopy $robocopyArgs
 # Robocopy возвращает коды 0-7 как успех, 8+ как ошибка
