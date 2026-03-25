@@ -95,19 +95,15 @@ int main(int argc, char *argv[])
 
 ### 5. Сборка и запуск
 
-В командной строке, находясь в папке `qt6-docker-app`, выполнить:
+В командной строке **VS Code+WSL**, находясь в папке `qt6-docker-app`, выполнить:
 ```shell
 docker build -t qt6-app .
 ```
 
 Создание и запуск контейнера для **Windows - WSLg/WSL (терминал Ubutnu)**
 ```shell
-xhost +local:docker
-```
-и
-```shell
 docker run -it --rm \
-  -e DISPLAY=host.docker.internal:0 \
+  -e DISPLAY=$DISPLAY \
   -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
   qt6-app
 ```

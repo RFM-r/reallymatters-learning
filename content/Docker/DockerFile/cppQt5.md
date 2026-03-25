@@ -102,7 +102,7 @@ docker run --rm -it \
 
 ### 6. Сборка и запуск
 
-В командной строке, находясь в папке `qt-simple`, выполнить:
+В командной строке **VS Code+WSL**, находясь в папке `qt-simple`, выполнить:
 ```shell
 docker build -t qt-docker-app .
 ```
