@@ -29,7 +29,7 @@ function Write-Log {
 function Pause-Exit {
     param([int]$code = 0)
     Write-Host ""
-    Read-Host "Нажмите Enter для завершения"
+    Read-Host "Press Enter to finish..."
     exit $code
 }
 
