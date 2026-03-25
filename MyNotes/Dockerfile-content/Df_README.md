@@ -1,2 +1,2 @@
-## [Самостоятельная работа по Dockerfile: Hello, World!](../Dockerfile-content/Hello-world/HW_README.md)
+## [Самостоятельная работа по Dockerfile: Hello, World!](../Dockerfile-content/hello-world/HW_README.md)
 ## [Самостоятельная работа по Dockerfile: Static Site: Nginx](../Dockerfile-content/StaticSite_Nginx/SSN_README.md)
