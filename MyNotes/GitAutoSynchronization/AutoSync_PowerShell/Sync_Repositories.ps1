@@ -10,7 +10,7 @@ $DestDir   = "C:\Users\user\Documents\Repositories\reallymatters-learning"
 
 # Настройки Git для целевого репозитория
 $DoPush = $true                           # $true - делать push, $false - только локальное копирование
-$CommitMessage = "Updated, auto-sync"  # Сообщение коммита
+$CommitMessage = "Updated, auto-sync(powershell)"  # Сообщение коммита
 
 # ==============================================================================
 # ФУНКЦИИ И ЛОГИКА
