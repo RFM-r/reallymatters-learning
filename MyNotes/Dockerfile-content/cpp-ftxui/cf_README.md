@@ -1,7 +1,7 @@
 # Самостоятельная работа по Информационным технологиям, Dockerfile: C++ and FTXUI
 
 ## 1. Создание структуры проекта:
-# ![](../cpp-ftxui/images_cf/)
+# ![](../cpp-ftxui/images_cf/cf_mkdir.png)
 # ![](../cpp-ftxui/images_cf/cf_dir_itself.png)
 
 ## 2. Сборка и запуск:

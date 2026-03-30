@@ -6,3 +6,5 @@
 ## [Самостоятельная работа по Dockerfile: C++](../Dockerfile-content/cpp-docker/cpp_README.md)
 ## [Самостоятельная работа по Dockerfile: C++ and FTXUI](../Dockerfile-content/cpp-ftxui/cf_README.md)
 ## [Самостоятельная работа по Dockerfile: Wow - console app for C++ and FTXUI](../Dockerfile-content/ftxui-wow/wow_README.md)
+## [Самостоятельная работа по Dockerfile: C++ and FLTK](../Dockerfile-content/cpp-fltk/cpp-f_README.md)
+## [Самостоятельная работа по Dockerfile: Rust](../Dockerfile-content/rust-docker/rust_README.md)
