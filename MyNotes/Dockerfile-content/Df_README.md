@@ -1,2 +1,8 @@
 ## [Самостоятельная работа по Dockerfile: Hello, World!](../Dockerfile-content/hello-world/HW_README.md)
 ## [Самостоятельная работа по Dockerfile: Static Site: Nginx](../Dockerfile-content/StaticSite_Nginx/SSN_README.md)
+## [Самостоятельная работа по Dockerfile: Simple App on Python](../Dockerfile-content/MyApp/cS_README.md)
+## [Самостоятельная работа по Dockerfile: Flask + Python](../Dockerfile-content/simple_flask_app/SFA_README.md)
+## [Самостоятельная работа по Dockerfile: C# (.NET)](../Dockerfile-content/MyApp/cS_README.md)
+## [Самостоятельная работа по Dockerfile: C++](../Dockerfile-content/cpp-docker/cpp_README.md)
+## [Самостоятельная работа по Dockerfile: C++ and FTXUI](../Dockerfile-content/cpp-ftxui/cf_README.md)
+## [Самостоятельная работа по Dockerfile: Wow - console app for C++ and FTXUI](../Dockerfile-content/ftxui-wow/wow_README.md)
