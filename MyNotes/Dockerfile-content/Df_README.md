@@ -8,3 +8,5 @@
 ## [Самостоятельная работа по Dockerfile: Wow - console app for C++ and FTXUI](../Dockerfile-content/ftxui-wow/wow_README.md)
 ## [Самостоятельная работа по Dockerfile: C++ and FLTK](../Dockerfile-content/cpp-fltk/cpp-f_README.md)
 ## [Самостоятельная работа по Dockerfile: Rust](../Dockerfile-content/rust-docker/rust_README.md)
+## [Самостоятельная работа по Dockerfile: Ruby](../Dockerfile-content/ruby-app/ruby_README.md)
+## [Самостоятельная работа по Dockerfile: PHP](../Dockerfile-content/php-docker/php_README.md)
