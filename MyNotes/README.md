@@ -9,3 +9,6 @@
 
 # Задания, связанные с Dockerfile-ом:
 ## [Dockerfile Stuff](../MyNotes/Dockerfile-content/Df_README.md)
+
+# DevOps/Pipelines и CICD:
+## [DevOps](../MyNotes/DevOps-Pipelines/DevOps_README.md)
