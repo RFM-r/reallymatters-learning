@@ -25,5 +25,5 @@
 ## 8. Админ-панель:
 # ![](./images_joomla/joomla_admin_panel.png)
 
-## 8. Остановка и удаление контейнеров и volumes:
+## 9. Остановка и удаление контейнеров и volumes:
 # ![](./images_joomla/joomla_cont_&_vol_deletion.png)
