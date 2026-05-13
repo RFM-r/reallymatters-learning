@@ -16,14 +16,12 @@ mysql-pma-app/
 └──compose.yaml
 ```
 
-
+Создать структуру проекта можно одной bash-командой:
 ```shell
 mkdir -p mysql-pma-app && touch mysql-pma-app/compose.yaml && cd mysql-pma-app
 ```
 
 ### 2. Файл настроек композера `compose.yml`
-
-Версия 1
 ```yml
 services:
   # Сервис базы данных MySQL
@@ -140,7 +138,7 @@ docker compose config
 ```shell
 docker compose exec mysql bash
 ```
-![Screen](/content/Docker/DockerCompose/img/14.png)
+![Screen](/content/Docker/DockerCompose/img/15.png)
 Выйти из контейнера можно командой `exit`
 
 ### 6. Удаление этого проекта
@@ -161,7 +159,7 @@ docker compose down -v
 ```
 (**Будьте осторожны:** эта команда удалит всё, что вы создали в проекте!).
 
-> ### Для полного удаления этого проекта, достаточно остановить его через `docker compose down` или `docker compose down --volumes` и docker-образ, после чего удалить каталог проекта `mysql-pma-app`
+> ### Для полного удаления этого проекта, достаточно остановить его через `docker compose down` или `docker compose down --volumes`, удалить docker-образ, после чего удалить каталог проекта `mysql-pma-app`
 
 Выходим из каталога проекта
 ```shell
