@@ -335,3 +335,40 @@ micro /usr/share/nginx/html/index.html
 	^
 	|
 редактинг файла, находящегося в http://localhost/
+
+
+	02.09.26	altlinux
+docker pull alt:sisyphus
+
+docker run -ti --rm --name alt alt:sisyphus //bin/bash
+
+apt-get update && apt-get dist-upgrade && update-kernel && apt-get clean
+
+apt-get update && apt-get install ollama && systemctl enable --now ollama
+
+ollama run infidelis/GigaChat-20B-A3B-instruct-v1.5:q4_K_M
+
+ollama serve
+
+
+docker run -d -v ollama_data:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
+
+Получить ollama:
+```shell
+docker run -d -v ollama_data:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
+```
+```shell
+docker exec -it ollama ollama run phi4
+```
+установить модель phi4:
+```shell
+ollama run phi4
+```
+выйти из командного режима нейросети:
+```shell
+/exit
+```
+и
+```shell
+/bye
+```
