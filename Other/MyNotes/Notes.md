@@ -372,3 +372,6 @@ ollama run phi4
 ```shell
 /bye
 ```
+
+http://localhost:8081/
+http://localhost:158/
