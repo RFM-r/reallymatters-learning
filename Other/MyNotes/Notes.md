@@ -374,4 +374,6 @@ ollama run phi4
 ```
 
 http://localhost:8081/
+http://localhost:8082/
 http://localhost:158/
+http://localhost:2990/
