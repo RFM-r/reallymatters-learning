@@ -373,6 +373,27 @@ ollama run phi4
 /bye
 ```
 
+Получить информацию по диску в Docker:
+```shell
+docker system df
+```
+Получить сводку по всем томам
+```shell
+docker volume ls
+```
+Список томов с размером
+```shell
+docker system df -v
+```
+Очистить все ненужные тома
+```shell
+docker volume prune -a
+```
+Очистить Build Cache
+```shell
+docker builder prune
+```
+
 http://localhost:8081/
 http://localhost:8082/
 http://localhost:158/
