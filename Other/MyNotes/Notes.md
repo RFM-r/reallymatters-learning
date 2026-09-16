@@ -398,5 +398,9 @@ http://localhost:8081/
 http://localhost:8082/
 http://localhost:158/
 http://localhost:2990/
-http://localhost:5173/
+http://localhost:5173/ - drawDB
 http://localhost:5432/
+http://localhost:5050/ -
+http://localhost:3000/ - LibreStudio
+http://localhost:5000/ - HomeHub
+http://localhost:8978/ - DBeaver
