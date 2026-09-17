@@ -404,3 +404,4 @@ http://localhost:5050/ -
 http://localhost:3000/ - LibreStudio
 http://localhost:5000/ - HomeHub
 http://localhost:8978/ - DBeaver
+http://localhost:8080/adminer.php - Adminer

@@ -16,3 +16,7 @@
 ## [Самостоятельная работа по Dockerfile: Java](../Dockerfile-content/my-java-app/java_README.md)
 ## [Самостоятельная работа по Dockerfile: Qt5](../Dockerfile-content/qt-docker-app/qt_README.md)
 ## [Самостоятельная работа по Dockerfile: Qt6](../Dockerfile-content/qt6-docker-app/qt6_README.md)
+
+### Extra:
+
+## [Самостоятельная работа по Dockerfile: PostgreSQL + Adminer](../Dockerfile-content/adminer-dockerfile/adm_README.md)
