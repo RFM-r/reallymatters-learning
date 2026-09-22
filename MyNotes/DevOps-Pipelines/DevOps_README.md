@@ -3,3 +3,6 @@
 # [Самостоятельная работа по DevOps/Pipelines: Node.js](../DevOps-Pipelines/Nodejs_PipelineCI/nodejs_ci.md)
 # [Самостоятельная работа по DevOps/Pipelines: Go](../DevOps-Pipelines/Go_PipelineCI/go_ci.md)
 # [Самостоятельная работа по DevOps/Pipelines: Rust](../DevOps-Pipelines/Rust_PipelineCI/rust_ci.md)
+
+
+# [Самостоятельная работа по DevOps/Pipelines: Rust #2](../DevOps-Pipelines/Rust_n2_Pipeline/rust-n2.md)
