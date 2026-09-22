@@ -15,3 +15,6 @@
 
 ## 6. Коммит в Github Actions:
 ![](./images_rust-n2/rust-n2_gh-actions.png)
+
+## 7. Package:
+![](./images_rust-n2/rust-n2_package.png)
