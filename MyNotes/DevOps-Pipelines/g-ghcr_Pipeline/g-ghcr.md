@@ -11,10 +11,8 @@
 
 ## 4. Коммит в Github Actions:
 ![](./images_g-ghcr/g-ghcr_gh-actions.png)
-### Ссылка на новый репозиторий для CI/CD:
-```shell
-https://github.com/RFM-r/go-docker-cicd/pkgs/container/go-docker-cicd
-```
+### (Ссылка на новый репозиторий для CI/CD):
+#### https://github.com/RFM-r/go-docker-cicd/pkgs/container/go-docker-cicd
 
 ## 5. Package:
 ![](./images_g-ghcr/g-ghcr_package.png)
