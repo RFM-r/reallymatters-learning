@@ -7,4 +7,4 @@
 
 # [Самостоятельная работа по DevOps/Pipelines: Rust #2](../DevOps-Pipelines/Rust_n2_Pipeline/rust-n2.md)
 # [Самостоятельная работа по DevOps/Pipelines: Go + GHCR](../DevOps-Pipelines/g-ghcr_Pipeline/g-ghcr.md)
-
+# [Самостоятельная работа по DevOps/Pipelines: CI/CD на Go + GH Releases](../DevOps-Pipelines/go-ghrelease/go-rls.md)
