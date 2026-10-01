@@ -4,6 +4,9 @@
 # [Самостоятельная работа по DevOps/Pipelines: Node.js](../DevOps-Pipelines/Nodejs_PipelineCI/nodejs_ci.md)
 # [Самостоятельная работа по DevOps/Pipelines: Go](../DevOps-Pipelines/Go_PipelineCI/go_ci.md)
 # [Самостоятельная работа по DevOps/Pipelines: Rust](../DevOps-Pipelines/Rust_PipelineCI/rust_ci.md)
+# [Самостоятельная работа по DevOps/Pipelines: PHP](../DevOps-Pipelines/myPHP_PipelineCI/php_ci.md)
+# [Самостоятельная работа по DevOps/Pipelines: C++](../DevOps-Pipelines/CPP_PipelineCI/cpp_ci.md)
+# [Самостоятельная работа по DevOps/Pipelines: Hello Java](../DevOps-Pipelines/Hjava_PipelineCI/java_ci.md)
 
 ## CD:
 # [Самостоятельная работа по DevOps/Pipelines: Rust #2](../DevOps-Pipelines/Rust_n2_Pipeline/rust-n2.md)
