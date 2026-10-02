@@ -11,5 +11,7 @@
 ## CI/CD:
 # [Самостоятельная работа по DevOps/Pipelines: Rust #2](../DevOps-Pipelines/Rust_n2_Pipeline/rust-n2.md)
 # [Самостоятельная работа по DevOps/Pipelines: Go + GHCR](../DevOps-Pipelines/g-ghcr_Pipeline/g-ghcr.md)
-# [Самостоятельная работа по DevOps/Pipelines: CI/CD на Go + GH Releases](../DevOps-Pipelines/go-ghrelease/go-rls.md)
+# [Самостоятельная работа по DevOps/Pipelines: CI/CD на Go CLI + GH Releases](../DevOps-Pipelines/go_cli-ghrelease/go_cli-rls.md)
 # [Самостоятельная работа по DevOps/Pipelines: Python CLI + GH Releases](../DevOps-Pipelines/PyInstaller-ghrelease/pyinst-rls.md)
+# [Самостоятельная работа по DevOps/Pipelines: CI/CD на C#/.NET CLI + GH Releases](../DevOps-Pipelines/cs-ghrelease/cs-rls.md)
+# [Самостоятельная работа по DevOps/Pipelines: CI/CD на Go GUI + GH Releases](../DevOps-Pipelines/go_gui-ghrelease/go_gui-rls.md)

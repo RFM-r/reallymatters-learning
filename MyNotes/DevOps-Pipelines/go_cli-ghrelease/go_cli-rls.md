@@ -1,4 +1,4 @@
-# Самостоятельная работа по DevOps/Pipelines: Ci/CD на Go + GH Release
+# Самостоятельная работа по DevOps/Pipelines: Ci/CD на Go CLI + GH Release
 
 ## 1. Создание структуры в корневой домашней папке:
 ![](./images_go-rls/go-rls_mkdir.png)
