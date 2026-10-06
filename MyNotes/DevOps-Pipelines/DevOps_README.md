@@ -14,5 +14,8 @@
 # [Самостоятельная работа по DevOps/Pipelines: CI/CD на Go CLI + GH Releases](../DevOps-Pipelines/go_cli-ghrelease/go_cli-rls.md)
 # [Самостоятельная работа по DevOps/Pipelines: Python CLI + GH Releases](../DevOps-Pipelines/PyInstaller-ghrelease/pyinst-rls.md)
 # [Самостоятельная работа по DevOps/Pipelines: CI/CD на C#/.NET CLI + GH Releases](../DevOps-Pipelines/cs-ghrelease/cs-rls.md)
-# [Самостоятельная работа по DevOps/Pipelines: CI/CD на Go GUI + GH Releases](../DevOps-Pipelines/go_gui-ghrelease/go_gui-rls.md) 
+# [Самостоятельная работа по DevOps/Pipelines: CI/CD на Go GUI + GH Releases](../DevOps-Pipelines/go_gui-ghrelease/go_gui-rls.md)
 # [Самостоятельная работа по DevOps/Pipelines: CI/CD с приложением на Go (Fyne) - Hex Loader + GH Releases](../DevOps-Pipelines/go_hex-ghrelease/go_hex-rls.md)
+
+## CI/CD (Deploy)
+# [Самостоятельная работа по DevOps/Pipelines: CI/CD на Github Pages](../DevOps-Pipelines/dep-static-cicd/dep-static.md)
