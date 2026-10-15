@@ -19,4 +19,5 @@
 # [Самостоятельная работа по DevOps/Pipelines: CI/CD с приложением на Go (Fyne) - Arduino Manager GUI + GH Releases](../DevOps-Pipelines/go_ardu-ghrelease/go_ardu-rls.md)
 
 ## CI/CD (Deploy)
-# [Самостоятельная работа по DevOps/Pipelines: CI/CD на Github Pages](../DevOps-Pipelines/dep-static-cicd/dep-static.md)
+# [Самостоятельная работа по DevOps/Pipelines: CI/CD статического сайта (HTML + CSS + JS) на GitHub Pages](../DevOps-Pipelines/dep-static-cicd/dep-static.md)
+# [Самостоятельная работа по DevOps/Pipelines: CI/CD на GitHub Pages](../DevOps-Pipelines/dep-gh-page/dep-gh.md)
