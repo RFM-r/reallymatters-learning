@@ -16,5 +16,5 @@
 # Задания, связанные с Docker Compose:
 ## [Compose](../MyNotes/Docker-Composes/DCom_README.md)
 
-# Задания, сввязанные с Docker DB:
+# Задания, связанные с Docker DB:
 ## [DataBase](../MyNotes/Docker-database/D-DB_README.md)
