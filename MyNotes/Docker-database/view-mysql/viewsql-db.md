@@ -57,3 +57,6 @@
 
 ## 13. Создание дампа:
 ![](./images_viewsql-db/viewsql-db_view-dump.png)
+
+## 14. Создание лога:
+![](./images_viewsql-db/viewsql-db_view-logs.png)

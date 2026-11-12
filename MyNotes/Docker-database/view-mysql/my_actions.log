@@ -1,0 +1,37 @@
+2026-11-12T12:08:36.401172Z	    8 Query	select @@version_comment limit 1
+2026-11-12T12:08:36.401411Z	    8 Query	SELECT 'test'
+2026-11-12T12:13:40.367489Z	    8 Query	select @@version_comment limit 1
+2026-11-12T12:14:06.680690Z	    9 Query	select @@version_comment limit 1
+2026-11-12T12:14:13.271926Z	   10 Query	select @@version_comment limit 1
+2026-11-12T12:14:17.591486Z	   10 Query	CREATE DATABASE sql_practice
+2026-11-12T12:14:30.023198Z	   10 Query	show databases
+2026-11-12T12:14:30.026351Z	   10 Query	show tables
+2026-11-12T12:14:35.686626Z	   10 Query	CREATE TABLE customers (
+2026-11-12T12:14:35.913123Z	   10 Query	CREATE TABLE orders (
+2026-11-12T12:14:39.612553Z	   10 Query	INSERT INTO customers (name, email, city) VALUES
+2026-11-12T12:14:39.746830Z	   10 Query	INSERT INTO orders (customer_id, order_date, amount, status) VALUES
+2026-11-12T12:14:52.822784Z	   10 Query	SHOW TABLES
+2026-11-12T12:14:52.824730Z	   10 Query	SELECT * FROM customers
+2026-11-12T12:14:52.963745Z	   10 Query	SELECT * FROM orders
+2026-11-12T12:14:59.347111Z	   10 Query	SELECT * FROM customers WHERE city = 'Москва'
+2026-11-12T12:15:04.032142Z	   10 Query	CREATE VIEW moscow_customers AS
+2026-11-12T12:15:06.647066Z	   10 Query	SELECT * FROM moscow_customers
+2026-11-12T12:15:12.160964Z	   10 Query	CREATE VIEW customer_summary AS
+2026-11-12T12:15:15.111352Z	   10 Query	SELECT * FROM customer_summary ORDER BY total_amount DESC
+2026-11-12T12:15:20.242722Z	   10 Query	SELECT name, total_amount FROM customer_summary WHERE total_amount > 2000
+2026-11-12T12:15:24.934249Z	   10 Query	SELECT * FROM customer_summary WHERE city = 'Москва'
+2026-11-12T12:15:29.670168Z	   10 Query	SHOW FULL TABLES WHERE Table_type = 'VIEW'
+2026-11-12T12:15:42.494240Z	   10 Query	SELECT * FROM moscow_customers
+2026-11-12T12:15:47.875447Z	   10 Query	CREATE OR REPLACE VIEW moscow_customers AS
+2026-11-12T12:15:58.452226Z	   10 Query	CREATE VIEW active_customers AS
+2026-11-12T12:16:05.976072Z	   10 Query	SELECT * FROM customer_summary WHERE city = 'Москва'
+2026-11-12T12:16:09.320701Z	   10 Query	EXPLAIN SELECT * FROM customer_summary WHERE city = 'Москва'
+2026-11-12T12:17:04.630599Z	   10 Query	CREATE OR REPLACE VIEW moscow_customers AS
+2026-11-12T12:17:08.394032Z	   10 Query	INSERT INTO moscow_customers (name, email, city)
+2026-11-12T12:17:10.990856Z	   10 Query	SELECT * FROM customers WHERE email = 'petr2@example.com'
+2026-11-12T12:17:14.625323Z	   10 Query	SELECT * FROM moscow_customers
+2026-11-12T12:17:17.409567Z	   10 Query	CREATE OR REPLACE VIEW moscow_customers AS
+2026-11-12T12:17:17.504182Z	   10 Query	INSERT INTO moscow_customers (name, email, city)
+2026-11-12T12:17:24.475821Z	   10 Query	CREATE VIEW public_customers AS
+2026-11-12T12:17:24.476586Z	   10 Query	CREATE USER 'analyst'@'%' IDENTIFIED BY <secret>
+2026-11-12T12:17:24.483204Z	   10 Query	GRANT SELECT ON sql_practice.public_customers TO 'analyst'@'%'
