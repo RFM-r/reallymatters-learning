@@ -1,4 +1,4 @@
-## Самостоятельная работа по Docker Databases: MySQL (#2)
+# Самостоятельная работа по Docker Databases: MySQL (#2)
 
 ## 1. Подключение к MySQL:
 ![](./images_sql-db-n2/sql-db-n2_connection.png)

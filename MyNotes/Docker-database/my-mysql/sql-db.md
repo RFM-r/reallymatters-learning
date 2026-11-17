@@ -1,4 +1,4 @@
-## Самостоятельная работа по Docker Databases: MySQL
+# Самостоятельная работа по Docker Databases: MySQL
 
 ## 1. Запуск контейнера:
 ![](./images_sql-db/sql-db_container.png)
