@@ -405,3 +405,15 @@ http://localhost:3000/ - LibreStudio
 http://localhost:5000/ - HomeHub
 http://localhost:8978/ - DBeaver
 http://localhost:8080/adminer.php - Adminer
+
+
+command for making my.cnf readable:
+```shell
+MSYS_NO_PATHCONV=1 docker exec my-mysql chmod 644 /etc/mysql/conf.d/my.cnf
+```
+
+command for checking, if settings in general.log were set correctly:
+```shell
+MSYS_NO_PATHCONV=1 docker exec my-mysql mysql -u root -p123 -e "SHOW VARIABLES LIKE 'general_log%';"
+MSYS_NO_PATHCONV=1 docker exec my-mysql mysql -u root -p123 -e "SHOW VARIABLES LIKE 'log_output';"
+```

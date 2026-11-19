@@ -1,0 +1,158 @@
+2026-11-19T09:53:25.584517Z	    8 Query	select @@version_comment limit 1
+2026-11-19T09:56:29.227865Z	   10 Query	select @@version_comment limit 1
+2026-11-19T09:58:05.287643Z	   11 Query	select @@version_comment limit 1
+2026-11-19T09:58:08.981544Z	   12 Query	select @@version_comment limit 1
+2026-11-19T09:59:17.938148Z	   13 Query	select @@version_comment limit 1
+2026-11-19T10:00:09.262907Z	   13 Query	SET GLOBAL general_log = 'ON'
+2026-11-19T10:00:09.408989Z	   13 Query	SET GLOBAL log_output = 'FILE'
+2026-11-19T10:04:34.164952Z	   13 Query	CREATE DATABASE shop_norm
+2026-11-19T10:04:35.204741Z	   13 Query	show databases
+2026-11-19T10:04:35.209735Z	   13 Query	show tables
+2026-11-19T10:06:26.662554Z	   13 Query	CREATE TABLE sales_unnormalized (
+2026-11-19T10:06:27.086455Z	   13 Query	INSERT INTO sales_unnormalized VALUES
+2026-11-19T10:07:13.852932Z	   13 Query	select * from sales_unnormalized
+2026-11-19T10:08:13.296133Z	   13 Query	show tables
+2026-11-19T10:15:42.399648Z	   13 Query	create table clients (client_id INT PRIMARY KEY, client_name varchar(255) not null, client_city int not null) character set utf8mb4 collate utf8mb4_unicode_ci
+2026-11-19T10:17:47.627011Z	   13 Query	create table products (product_id int primary key, product_name varchar(255) not null, unit_price decimal(10,2)) character set utf8mb4 collate utf8mb4_unicode_ci
+2026-11-19T10:20:32.154663Z	   13 Query	create table sales (sale_id int primary key, sale_date date not null, client_id int not null, foreign key (client_id) references clients(client_id)) character set utf8mb4 collate utf8mb4_unicode_ci
+2026-11-19T10:22:31.992368Z	   13 Query	create table sale_items (sale_id int, product_id int, quantity int, foreign key (sale_id) references sales(sale_id), foreign key (product_id) references products(product_id)) character set utf8mb4 collate utf8mb4_unicode_ci
+2026-11-19T10:22:37.000744Z	   13 Query	show tables
+2026-11-19T10:48:15.928963Z	   13 Query	insert into clients SELECT DISTINCT client_id, client_name, client_city FROM sales_unnormalized
+2026-11-19T10:57:16.184327Z	   13 Query	insert into clients SELECT DISTINCT client_id, client_name, client_city FROM sales_unnormalized
+2026-11-19T10:58:53.934988Z	   13 Query	drop table clients
+2026-11-19T10:59:17.978903Z	   13 Query	drop table sales
+2026-11-19T10:59:26.873772Z	   13 Query	drop table sale_items
+2026-11-19T10:59:28.502582Z	   13 Query	drop table sales
+2026-11-19T10:59:30.273546Z	   13 Query	drop table sales
+2026-11-19T10:59:31.996518Z	   13 Query	drop table clients
+2026-11-19T10:59:48.646014Z	   13 Query	create table clients (client_id INT PRIMARY KEY, client_name varchar(255) not null, client_city varchar(255) not null) character set utf8mb4 collate utf8mb4_unicode_ci
+2026-11-19T10:59:58.677562Z	   13 Query	create table sales (sale_id int primary key, sale_date date not null, client_id int not null, foreign key (client_id) references clients(client_id)) character set utf8mb4 collate utf8mb4_unicode_ci
+2026-11-19T11:00:03.010031Z	   13 Query	create table sale_items (sale_id int, product_id int, quantity int, foreign key (sale_id) references sales(sale_id), foreign key (product_id) references products(product_id)) character set utf8mb4 collate utf8mb4_unicode_ci
+2026-11-19T11:00:05.915756Z	   13 Query	show tables
+2026-11-19T11:00:11.033857Z	   13 Query	insert into clients SELECT DISTINCT client_id, client_name, client_city FROM sales_unnormalized
+2026-11-19T11:00:49.585073Z	   13 Query	insert into products select distinct product_id, product_name, unit_price from sales_unnormalized
+2026-11-19T11:01:22.835132Z	   13 Query	insert into sales select distinct sale_id, sale_date, client_id from sales_unnormalized
+2026-11-19T11:01:40.263787Z	   13 Query	insert into sale_items select distinct sale_id, product_id, quantity from sales_unnormalized
+2026-11-19T11:05:13.490048Z	   13 Query	select * from products
+2026-11-19T11:05:25.918340Z	   13 Query	select * from customers
+2026-11-19T11:06:46.171175Z	   13 Query	select * from products
+2026-11-19T11:06:52.089943Z	   13 Query	select * from clients
+2026-11-19T11:06:55.702521Z	   13 Query	select * from sales
+2026-11-19T11:07:00.084499Z	   13 Query	select * from sale_items
+2026-11-19T11:09:20.470538Z	   14 Query	/*!40100 SET @@SQL_MODE='' */
+2026-11-19T11:09:20.473410Z	   14 Query	/*!40103 SET TIME_ZONE='+00:00' */
+2026-11-19T11:09:20.474978Z	   14 Query	/*!80000 SET SESSION information_schema_stats_expiry=0 */
+2026-11-19T11:09:20.475811Z	   14 Query	SET SESSION NET_READ_TIMEOUT= 86400, SESSION NET_WRITE_TIMEOUT= 86400
+2026-11-19T11:09:20.504683Z	   14 Query	SET SESSION TRANSACTION ISOLATION LEVEL REPEATABLE READ
+2026-11-19T11:09:20.505638Z	   14 Query	START TRANSACTION /*!40100 WITH CONSISTENT SNAPSHOT */
+2026-11-19T11:09:20.506644Z	   14 Query	UNLOCK TABLES
+2026-11-19T11:09:20.508802Z	   14 Query	SELECT LOGFILE_GROUP_NAME, FILE_NAME, TOTAL_EXTENTS, INITIAL_SIZE, ENGINE, EXTRA FROM INFORMATION_SCHEMA.FILES WHERE ENGINE = 'ndbcluster' AND FILE_TYPE = 'UNDO LOG' AND FILE_NAME IS NOT NULL AND LOGFILE_GROUP_NAME IS NOT NULL AND LOGFILE_GROUP_NAME IN (SELECT DISTINCT LOGFILE_GROUP_NAME FROM INFORMATION_SCHEMA.FILES WHERE ENGINE = 'ndbcluster' AND FILE_TYPE = 'DATAFILE' AND TABLESPACE_NAME IN (SELECT DISTINCT TABLESPACE_NAME FROM INFORMATION_SCHEMA.PARTITIONS WHERE TABLE_SCHEMA IN ('my_database'))) GROUP BY LOGFILE_GROUP_NAME, FILE_NAME, ENGINE, TOTAL_EXTENTS, INITIAL_SIZE ORDER BY LOGFILE_GROUP_NAME
+2026-11-19T11:09:20.537328Z	   14 Query	SELECT DISTINCT TABLESPACE_NAME, FILE_NAME, LOGFILE_GROUP_NAME, EXTENT_SIZE, INITIAL_SIZE, ENGINE FROM INFORMATION_SCHEMA.FILES WHERE FILE_TYPE = 'DATAFILE' AND TABLESPACE_NAME IN (SELECT DISTINCT TABLESPACE_NAME FROM INFORMATION_SCHEMA.PARTITIONS WHERE TABLE_SCHEMA IN ('my_database')) ORDER BY TABLESPACE_NAME, LOGFILE_GROUP_NAME
+2026-11-19T11:09:29.227524Z	   15 Query	/*!40100 SET @@SQL_MODE='' */
+2026-11-19T11:09:29.228237Z	   15 Query	/*!40103 SET TIME_ZONE='+00:00' */
+2026-11-19T11:09:29.228452Z	   15 Query	/*!80000 SET SESSION information_schema_stats_expiry=0 */
+2026-11-19T11:09:29.228578Z	   15 Query	SET SESSION NET_READ_TIMEOUT= 86400, SESSION NET_WRITE_TIMEOUT= 86400
+2026-11-19T11:09:29.230114Z	   15 Query	SET SESSION TRANSACTION ISOLATION LEVEL REPEATABLE READ
+2026-11-19T11:09:29.230214Z	   15 Query	START TRANSACTION /*!40100 WITH CONSISTENT SNAPSHOT */
+2026-11-19T11:09:29.230285Z	   15 Query	UNLOCK TABLES
+2026-11-19T11:09:29.230424Z	   15 Query	SELECT LOGFILE_GROUP_NAME, FILE_NAME, TOTAL_EXTENTS, INITIAL_SIZE, ENGINE, EXTRA FROM INFORMATION_SCHEMA.FILES WHERE ENGINE = 'ndbcluster' AND FILE_TYPE = 'UNDO LOG' AND FILE_NAME IS NOT NULL AND LOGFILE_GROUP_NAME IS NOT NULL AND LOGFILE_GROUP_NAME IN (SELECT DISTINCT LOGFILE_GROUP_NAME FROM INFORMATION_SCHEMA.FILES WHERE ENGINE = 'ndbcluster' AND FILE_TYPE = 'DATAFILE' AND TABLESPACE_NAME IN (SELECT DISTINCT TABLESPACE_NAME FROM INFORMATION_SCHEMA.PARTITIONS WHERE TABLE_SCHEMA IN ('sales_norm'))) GROUP BY LOGFILE_GROUP_NAME, FILE_NAME, ENGINE, TOTAL_EXTENTS, INITIAL_SIZE ORDER BY LOGFILE_GROUP_NAME
+2026-11-19T11:09:29.232112Z	   15 Query	SELECT DISTINCT TABLESPACE_NAME, FILE_NAME, LOGFILE_GROUP_NAME, EXTENT_SIZE, INITIAL_SIZE, ENGINE FROM INFORMATION_SCHEMA.FILES WHERE FILE_TYPE = 'DATAFILE' AND TABLESPACE_NAME IN (SELECT DISTINCT TABLESPACE_NAME FROM INFORMATION_SCHEMA.PARTITIONS WHERE TABLE_SCHEMA IN ('sales_norm')) ORDER BY TABLESPACE_NAME, LOGFILE_GROUP_NAME
+2026-11-19T11:10:14.455843Z	   16 Query	select @@version_comment limit 1
+2026-11-19T11:10:21.013278Z	   16 Query	show databases
+2026-11-19T11:10:41.971185Z	   17 Query	/*!40100 SET @@SQL_MODE='' */
+2026-11-19T11:10:41.971943Z	   17 Query	/*!40103 SET TIME_ZONE='+00:00' */
+2026-11-19T11:10:41.972179Z	   17 Query	/*!80000 SET SESSION information_schema_stats_expiry=0 */
+2026-11-19T11:10:41.972302Z	   17 Query	SET SESSION NET_READ_TIMEOUT= 86400, SESSION NET_WRITE_TIMEOUT= 86400
+2026-11-19T11:10:41.979265Z	   17 Query	SET SESSION TRANSACTION ISOLATION LEVEL REPEATABLE READ
+2026-11-19T11:10:41.979456Z	   17 Query	START TRANSACTION /*!40100 WITH CONSISTENT SNAPSHOT */
+2026-11-19T11:10:41.979679Z	   17 Query	UNLOCK TABLES
+2026-11-19T11:10:41.980142Z	   17 Query	SELECT LOGFILE_GROUP_NAME, FILE_NAME, TOTAL_EXTENTS, INITIAL_SIZE, ENGINE, EXTRA FROM INFORMATION_SCHEMA.FILES WHERE ENGINE = 'ndbcluster' AND FILE_TYPE = 'UNDO LOG' AND FILE_NAME IS NOT NULL AND LOGFILE_GROUP_NAME IS NOT NULL AND LOGFILE_GROUP_NAME IN (SELECT DISTINCT LOGFILE_GROUP_NAME FROM INFORMATION_SCHEMA.FILES WHERE ENGINE = 'ndbcluster' AND FILE_TYPE = 'DATAFILE' AND TABLESPACE_NAME IN (SELECT DISTINCT TABLESPACE_NAME FROM INFORMATION_SCHEMA.PARTITIONS WHERE TABLE_SCHEMA IN ('shop_norm'))) GROUP BY LOGFILE_GROUP_NAME, FILE_NAME, ENGINE, TOTAL_EXTENTS, INITIAL_SIZE ORDER BY LOGFILE_GROUP_NAME
+2026-11-19T11:10:41.984261Z	   17 Query	SELECT DISTINCT TABLESPACE_NAME, FILE_NAME, LOGFILE_GROUP_NAME, EXTENT_SIZE, INITIAL_SIZE, ENGINE FROM INFORMATION_SCHEMA.FILES WHERE FILE_TYPE = 'DATAFILE' AND TABLESPACE_NAME IN (SELECT DISTINCT TABLESPACE_NAME FROM INFORMATION_SCHEMA.PARTITIONS WHERE TABLE_SCHEMA IN ('shop_norm')) ORDER BY TABLESPACE_NAME, LOGFILE_GROUP_NAME
+2026-11-19T11:10:41.987806Z	   17 Query	SAVEPOINT sp
+2026-11-19T11:10:41.988212Z	   17 Query	show tables
+2026-11-19T11:10:41.990084Z	   17 Query	show table status like 'clients'
+2026-11-19T11:10:41.997593Z	   17 Query	SET SQL_QUOTE_SHOW_CREATE=1
+2026-11-19T11:10:41.997953Z	   17 Query	SET SESSION character_set_results = 'binary'
+2026-11-19T11:10:41.998632Z	   17 Query	show create table `clients`
+2026-11-19T11:10:42.000448Z	   17 Query	SET SESSION character_set_results = 'utf8mb4'
+2026-11-19T11:10:42.000873Z	   17 Query	show fields from `clients`
+2026-11-19T11:10:42.008423Z	   17 Query	show fields from `clients`
+2026-11-19T11:10:42.009867Z	   17 Query	SELECT /*!40001 SQL_NO_CACHE */ * FROM `clients`
+2026-11-19T11:10:42.010225Z	   17 Query	SET SESSION character_set_results = 'binary'
+2026-11-19T11:10:42.010393Z	   17 Query	use `shop_norm`
+2026-11-19T11:10:42.010779Z	   17 Query	select @@collation_database
+2026-11-19T11:10:42.011477Z	   17 Query	SHOW TRIGGERS LIKE 'clients'
+2026-11-19T11:10:42.013712Z	   17 Query	SET SESSION character_set_results = 'utf8mb4'
+2026-11-19T11:10:42.013993Z	   17 Query	SET SESSION character_set_results = 'binary'
+2026-11-19T11:10:42.014783Z	   17 Query	SELECT COLUMN_NAME,                       JSON_EXTRACT(HISTOGRAM, '$."number-of-buckets-specified"')                FROM information_schema.COLUMN_STATISTICS                WHERE SCHEMA_NAME = 'shop_norm' AND TABLE_NAME = 'clients'
+2026-11-19T11:10:42.017409Z	   17 Query	SET SESSION character_set_results = 'utf8mb4'
+2026-11-19T11:10:42.017616Z	   17 Query	ROLLBACK TO SAVEPOINT sp
+2026-11-19T11:10:42.018229Z	   17 Query	show table status like 'products'
+2026-11-19T11:10:42.019709Z	   17 Query	SET SQL_QUOTE_SHOW_CREATE=1
+2026-11-19T11:10:42.019898Z	   17 Query	SET SESSION character_set_results = 'binary'
+2026-11-19T11:10:42.020025Z	   17 Query	show create table `products`
+2026-11-19T11:10:42.020326Z	   17 Query	SET SESSION character_set_results = 'utf8mb4'
+2026-11-19T11:10:42.020446Z	   17 Query	show fields from `products`
+2026-11-19T11:10:42.021221Z	   17 Query	show fields from `products`
+2026-11-19T11:10:42.022010Z	   17 Query	SELECT /*!40001 SQL_NO_CACHE */ * FROM `products`
+2026-11-19T11:10:42.022365Z	   17 Query	SET SESSION character_set_results = 'binary'
+2026-11-19T11:10:42.022649Z	   17 Query	use `shop_norm`
+2026-11-19T11:10:42.022828Z	   17 Query	select @@collation_database
+2026-11-19T11:10:42.022961Z	   17 Query	SHOW TRIGGERS LIKE 'products'
+2026-11-19T11:10:42.024352Z	   17 Query	SET SESSION character_set_results = 'utf8mb4'
+2026-11-19T11:10:42.024576Z	   17 Query	SET SESSION character_set_results = 'binary'
+2026-11-19T11:10:42.024934Z	   17 Query	SELECT COLUMN_NAME,                       JSON_EXTRACT(HISTOGRAM, '$."number-of-buckets-specified"')                FROM information_schema.COLUMN_STATISTICS                WHERE SCHEMA_NAME = 'shop_norm' AND TABLE_NAME = 'products'
+2026-11-19T11:10:42.025389Z	   17 Query	SET SESSION character_set_results = 'utf8mb4'
+2026-11-19T11:10:42.025543Z	   17 Query	ROLLBACK TO SAVEPOINT sp
+2026-11-19T11:10:42.025708Z	   17 Query	show table status like 'sale\_items'
+2026-11-19T11:10:42.026731Z	   17 Query	SET SQL_QUOTE_SHOW_CREATE=1
+2026-11-19T11:10:42.027065Z	   17 Query	SET SESSION character_set_results = 'binary'
+2026-11-19T11:10:42.027302Z	   17 Query	show create table `sale_items`
+2026-11-19T11:10:42.027930Z	   17 Query	SET SESSION character_set_results = 'utf8mb4'
+2026-11-19T11:10:42.028150Z	   17 Query	show fields from `sale_items`
+2026-11-19T11:10:42.029629Z	   17 Query	show fields from `sale_items`
+2026-11-19T11:10:42.030443Z	   17 Query	SELECT /*!40001 SQL_NO_CACHE */ * FROM `sale_items`
+2026-11-19T11:10:42.030878Z	   17 Query	SET SESSION character_set_results = 'binary'
+2026-11-19T11:10:42.031055Z	   17 Query	use `shop_norm`
+2026-11-19T11:10:42.031233Z	   17 Query	select @@collation_database
+2026-11-19T11:10:42.031441Z	   17 Query	SHOW TRIGGERS LIKE 'sale\_items'
+2026-11-19T11:10:42.032078Z	   17 Query	SET SESSION character_set_results = 'utf8mb4'
+2026-11-19T11:10:42.032240Z	   17 Query	SET SESSION character_set_results = 'binary'
+2026-11-19T11:10:42.032360Z	   17 Query	SELECT COLUMN_NAME,                       JSON_EXTRACT(HISTOGRAM, '$."number-of-buckets-specified"')                FROM information_schema.COLUMN_STATISTICS                WHERE SCHEMA_NAME = 'shop_norm' AND TABLE_NAME = 'sale_items'
+2026-11-19T11:10:42.032597Z	   17 Query	SET SESSION character_set_results = 'utf8mb4'
+2026-11-19T11:10:42.032686Z	   17 Query	ROLLBACK TO SAVEPOINT sp
+2026-11-19T11:10:42.032824Z	   17 Query	show table status like 'sales'
+2026-11-19T11:10:42.033791Z	   17 Query	SET SQL_QUOTE_SHOW_CREATE=1
+2026-11-19T11:10:42.033946Z	   17 Query	SET SESSION character_set_results = 'binary'
+2026-11-19T11:10:42.034106Z	   17 Query	show create table `sales`
+2026-11-19T11:10:42.034504Z	   17 Query	SET SESSION character_set_results = 'utf8mb4'
+2026-11-19T11:10:42.034682Z	   17 Query	show fields from `sales`
+2026-11-19T11:10:42.035696Z	   17 Query	show fields from `sales`
+2026-11-19T11:10:42.036526Z	   17 Query	SELECT /*!40001 SQL_NO_CACHE */ * FROM `sales`
+2026-11-19T11:10:42.036714Z	   17 Query	SET SESSION character_set_results = 'binary'
+2026-11-19T11:10:42.036882Z	   17 Query	use `shop_norm`
+2026-11-19T11:10:42.037042Z	   17 Query	select @@collation_database
+2026-11-19T11:10:42.037243Z	   17 Query	SHOW TRIGGERS LIKE 'sales'
+2026-11-19T11:10:42.037828Z	   17 Query	SET SESSION character_set_results = 'utf8mb4'
+2026-11-19T11:10:42.037909Z	   17 Query	SET SESSION character_set_results = 'binary'
+2026-11-19T11:10:42.038013Z	   17 Query	SELECT COLUMN_NAME,                       JSON_EXTRACT(HISTOGRAM, '$."number-of-buckets-specified"')                FROM information_schema.COLUMN_STATISTICS                WHERE SCHEMA_NAME = 'shop_norm' AND TABLE_NAME = 'sales'
+2026-11-19T11:10:42.038311Z	   17 Query	SET SESSION character_set_results = 'utf8mb4'
+2026-11-19T11:10:42.038470Z	   17 Query	ROLLBACK TO SAVEPOINT sp
+2026-11-19T11:10:42.038662Z	   17 Query	show table status like 'sales\_unnormalized'
+2026-11-19T11:10:42.040162Z	   17 Query	SET SQL_QUOTE_SHOW_CREATE=1
+2026-11-19T11:10:42.040322Z	   17 Query	SET SESSION character_set_results = 'binary'
+2026-11-19T11:10:42.040403Z	   17 Query	show create table `sales_unnormalized`
+2026-11-19T11:10:42.040752Z	   17 Query	SET SESSION character_set_results = 'utf8mb4'
+2026-11-19T11:10:42.040877Z	   17 Query	show fields from `sales_unnormalized`
+2026-11-19T11:10:42.043003Z	   17 Query	show fields from `sales_unnormalized`
+2026-11-19T11:10:42.044517Z	   17 Query	SELECT /*!40001 SQL_NO_CACHE */ * FROM `sales_unnormalized`
+2026-11-19T11:10:42.045281Z	   17 Query	SET SESSION character_set_results = 'binary'
+2026-11-19T11:10:42.045479Z	   17 Query	use `shop_norm`
+2026-11-19T11:10:42.045685Z	   17 Query	select @@collation_database
+2026-11-19T11:10:42.045851Z	   17 Query	SHOW TRIGGERS LIKE 'sales\_unnormalized'
+2026-11-19T11:10:42.046751Z	   17 Query	SET SESSION character_set_results = 'utf8mb4'
+2026-11-19T11:10:42.046931Z	   17 Query	SET SESSION character_set_results = 'binary'
+2026-11-19T11:10:42.047146Z	   17 Query	SELECT COLUMN_NAME,                       JSON_EXTRACT(HISTOGRAM, '$."number-of-buckets-specified"')                FROM information_schema.COLUMN_STATISTICS                WHERE SCHEMA_NAME = 'shop_norm' AND TABLE_NAME = 'sales_unnormalized'
+2026-11-19T11:10:42.047593Z	   17 Query	SET SESSION character_set_results = 'utf8mb4'
+2026-11-19T11:10:42.047772Z	   17 Query	ROLLBACK TO SAVEPOINT sp
+2026-11-19T11:10:42.047922Z	   17 Query	RELEASE SAVEPOINT sp
