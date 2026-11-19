@@ -4,3 +4,4 @@
 ## [Самостоятельная работа по Docker Databases: Представления(VIEW) в MySQL](./view-mysql/viewsql-db.md)
 ## [Самостоятельная работа по Docker Databases: Нормализация данных в БД](./normalization-mysql/nrmlsql-db.md)
 ## [Самостоятельная работа по Docker Databases: Нормализация данных в БД #2](./normalization-2-mysql/nrmlsql-2-db.md)
+## [Самостоятельная работа по Docker Databases: Aliases in MySQL](./alias-mysql/aliassql-db.md)
