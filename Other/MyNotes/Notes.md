@@ -414,16 +414,17 @@ MSYS_NO_PATHCONV=1 docker exec my-mysql chmod 644 /etc/mysql/conf.d/my.cnf
 
 command for checking, if settings in general.log were set correctly:
 ```shell
-MSYS_NO_PATHCONV=1 docker exec my-mysql mysql -u root -p123 -e "SHOW VARIABLES LIKE 'general_log%';"
-MSYS_NO_PATHCONV=1 docker exec my-mysql mysql -u root -p123 -e "SHOW VARIABLES LIKE 'log_output';"
+docker exec -it my-mysql mysql -uroot -p123 -e "SHOW VARIABLES LIKE 'general_log'; SHOW VARIABLES LIKE 'slow_query_log'; SHOW VARIABLES LIKE 'log_output';"
 ```
-
 command, for making general_log: 'ON' and log_output: 'FILE' (using these in a container):
 ```shell
 SET GLOBAL general_log = 'ON';
 SET GLOBAL log_output = 'FILE';
 ```
-
+or use this outside of a container's connection:
+```shell
+docker exec -it my-mysql mysql -uroot -p123 -e "SET GLOBAL general_log = 'ON';"
+```
 fix, if the method above doesn't work:
 ```shell
 nano ~/.docker/config.json
@@ -433,7 +434,8 @@ nano ~/.docker/config.json
 ```shell
 docker run -d --name my-mysql \
   -e MYSQL_ROOT_PASSWORD=123 \
-  -v mysql_alias_data:/var/lib/mysql \
+  -e LANG=C.UTF-8 \
+  -v mysql_data:/var/lib/mysql \
   mysql:latest
 ```
 																							##	insert intended path

@@ -5,3 +5,4 @@
 ## [Самостоятельная работа по Docker Databases: Нормализация данных в БД](./normalization-mysql/nrmlsql-db.md)
 ## [Самостоятельная работа по Docker Databases: Нормализация данных в БД #2](./normalization-2-mysql/nrmlsql-2-db.md)
 ## [Самостоятельная работа по Docker Databases: Aliases in MySQL](./alias-mysql/aliassql-db.md)
+## [Самостоятельная работа по Docker Databases: Index in MySQL](./index-mysql/indexsql-db.md)
