@@ -417,3 +417,33 @@ command for checking, if settings in general.log were set correctly:
 MSYS_NO_PATHCONV=1 docker exec my-mysql mysql -u root -p123 -e "SHOW VARIABLES LIKE 'general_log%';"
 MSYS_NO_PATHCONV=1 docker exec my-mysql mysql -u root -p123 -e "SHOW VARIABLES LIKE 'log_output';"
 ```
+
+command, for making general_log: 'ON' and log_output: 'FILE' (using these in a container):
+```shell
+SET GLOBAL general_log = 'ON';
+SET GLOBAL log_output = 'FILE';
+```
+
+fix, if the method above doesn't work:
+```shell
+nano ~/.docker/config.json
+```
+"CredsStore":"" (should be empty, if not - change)
+## Ctrl+O, Enter, Ctrl+X
+```shell
+docker run -d --name my-mysql \
+  -e MYSQL_ROOT_PASSWORD=123 \
+  -v mysql_alias_data:/var/lib/mysql \
+  mysql:latest
+```
+																							##	insert intended path
+																							##			vvv
+```shell
+docker cp /mnt/c/Users/user/Documents/Repositories/reallymatters-learning/MyNotes/Docker-database/alias-mysql/my.cnf my-mysql:/etc/mysql/conf.d/my.cnf
+```
+```shell
+docker exec my-mysql chmod 644 /etc/mysql/conf.d/my.cnf
+```
+```shell
+docker restart my-mysql
+```

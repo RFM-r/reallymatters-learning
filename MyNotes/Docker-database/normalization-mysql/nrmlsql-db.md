@@ -35,7 +35,7 @@
 ## 6. Сравнение данных с прошлой таблицы и новых:
 ### 6.1. `products` and `sales_unnormalized_2`:
 ![](./images_nrmlsql-db/nrmlsql-db_products-compare.png)
-### 6.2. `reports` and `sales_unnormalized_2:
+### 6.2. `reports` and `sales_unnormalized_2`:
 ![](./images_nrmlsql-db/nrmlsql-db_report-date-compare.png)
 ### 6.3. Общая сумма до и после:
 ![](./images_nrmlsql-db/nrmlsql-db_sum-before-and-after.png)

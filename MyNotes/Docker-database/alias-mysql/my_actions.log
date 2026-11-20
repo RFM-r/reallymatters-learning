@@ -1,0 +1,30 @@
+2026-11-20T07:13:02.449076Z	   10 Query	SHOW VARIABLES LIKE 'general_log%'
+2026-11-20T07:15:47.156434Z	   12 Query	SHOW VARIABLES LIKE 'general_log%'
+2026-11-20T07:15:47.374139Z	   13 Query	SHOW VARIABLES LIKE 'log_output'
+2026-11-20T07:19:12.420096Z	   14 Query	CREATE DATABASE alias_db
+2026-11-20T07:19:12.429347Z	   14 Query	SELECT DATABASE()
+2026-11-20T07:19:12.438764Z	   14 Query	CREATE TABLE customers (
+2026-11-20T07:19:12.465637Z	   14 Query	CREATE TABLE orders (
+2026-11-20T07:19:12.994249Z	   14 Query	CREATE TABLE employees (
+2026-11-20T07:22:17.867381Z	   14 Query	INSERT INTO customers (name, email, city) VALUES
+2026-11-20T07:22:17.881366Z	   14 Query	INSERT INTO orders (customer_id, order_date, amount, status) VALUES
+2026-11-20T07:22:18.254544Z	   14 Query	INSERT INTO employees (name, position, manager_id) VALUES
+2026-11-20T07:22:53.432043Z	   14 Query	SELECT * FROM customers
+2026-11-20T07:22:53.432666Z	   14 Query	SELECT * FROM orders
+2026-11-20T07:22:53.502644Z	   14 Query	SELECT * FROM employees
+2026-11-20T07:24:07.190453Z	   14 Query	SELECT c.name, o.order_date, o.amount
+2026-11-20T07:27:14.934590Z	   14 Query	SELECT e.name AS employee, m.name AS manager
+2026-11-20T07:27:43.915006Z	   14 Query	SELECT e.name AS employee, m.name AS manager
+2026-11-20T07:28:02.680495Z	   14 Query	SELECT e.name AS employee, m.name AS manager FROM employees e JOIN employees m ON e.manager_id = m.id
+2026-11-20T07:29:10.610587Z	   14 Query	SELECT c.id, o.id FROM customers c JOIN orders o ON c.id = o.customer_id
+2026-11-20T07:31:40.136099Z	   14 Query	SELECT *
+2026-11-20T07:31:52.908187Z	   14 Query	SELECT *
+2026-11-20T07:34:12.415714Z	   14 Query	SELECT name AS customer_name,
+2026-11-20T07:38:11.891424Z	   14 Query	SELECT id, amount * 2 AS double_amount
+2026-11-20T07:44:05.547759Z	   14 Query	SELECT id, amount * 2 AS double_amount
+2026-11-20T07:45:23.369874Z	   14 Query	SELECT id, amount * 2 AS double_amount
+2026-11-20T07:47:09.680938Z	   14 Query	SELECT c.name, o.total
+2026-11-20T07:47:40.725840Z	   14 Query	SELECT c.name,
+2026-11-20T07:49:19.199236Z	   14 Query	SELECT c.name AS customer,
+2026-11-20T07:50:35.066251Z	   14 Query	SELECT customers.name, COUNT(orders.id) AS order_count, SUM(orders.amount) AS total_amount
+2026-11-20T07:50:41.057565Z	   14 Query	SELECT c.name, COUNT(o.id) AS order_count, SUM(o.amount) AS total_amount
